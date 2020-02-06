@@ -10,7 +10,8 @@ text-align: justify}
 </style>
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = FALSE)
+knitr::opts_chunk$set(echo = T, message = F, warning = F)
+library(caret)
 ```
 
 ## Description
@@ -31,14 +32,16 @@ In fact, he loves them so much so that he can classify them into 3 species with 
 
 ![](images/mansel.PNG)
 
-## Doge can also:
-- Make multiple predictions (if you have a bouquet of flowers) with test dataset or your own dataset:
-
-
-![](images/multisel.PNG)
+## Doge accuracy test:
+### (he did even better on the test set)
+```{r, comment=""}
+model <- readRDS("data/model.bz2")
+confusionMatrix(model)
+```
 
 ## With Doge you can:
 
+- Make multiple predictions (if you have a bouquet of flowers) with test dataset or your own dataset:
 - Download a test dataset 
 - Download a CSV-output of multiple predictions
 - Enjoy Doge's masterpeace
